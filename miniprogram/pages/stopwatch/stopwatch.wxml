@@ -1,0 +1,58 @@
+<!--pages/stopwatch/stopwatch.wxml-->
+<view class="container">
+  <!-- page start -->
+  <game-start
+    wx:if="{{pageStep === 0}}"
+    game-start-data="{{gameStartData}}"
+    bind:gameStart="gameStart"
+  ></game-start>
+
+  <game-over
+    wx:if="{{pageStep === 3}}"
+    game-over-data="{{gameOverData}}"
+    bind:scoreShare="scoreShare"
+    bind:pageInit="gameOverPageInit"
+  ></game-over>
+
+  <!-- 正式游戏 -->
+  <view class="stopwatch" wx:if="{{pageStep === 1 || pageStep === 2}}">
+    <image class="stopwatch-bg" src="../../images/stopwatch_bg.png"></image>
+
+    <view class="stopwatch-mask" wx:if="{{showPreGameMask}}">
+      <image class="stopwatch-mask-button" src="../../images/guide_btn.png" bindtap="preGameClick"></image>
+    </view>
+    <view class="stopwatch-header-pregame" wx:if="{{pageStep === 1}}">
+      <view class="stopwatch-official-running" wx:if="{{!showCountdown}}">
+        <view class="stopwatch-official-running-header">
+        </view>
+      </view>
+      <view class="stopwatch-header-pregame-title">{{preGameTitleMap[preGameWatchStatus]}}</view>
+    </view>
+
+    <view class="stopwatch-header" wx:if="{{pageStep === 2}}">
+      <view class="stopwatch-official-counting" wx:if="{{showCountdown}}">{{countdownNum}}</view>
+
+      <view class="stopwatch-official-running" wx:if="{{!showCountdown}}">
+        <view class="stopwatch-official-running-header">
+          <view class="stopwatch-header-count">{{tryTimes}}/{{totalTimes}}</view>
+          <view class="stopwatch-header-bar">
+            <view class="stopwatch-header-bar-inner" style="width:{{tryTimes/totalTimes*100}}%"></view>
+          </view>
+          <view class="stopwatch-header-pause">
+            <!-- <image class="stopwatch-header-pause-img" src="../../images/stopwatch_header_pause.png"></image> -->
+          </view>
+        </view>
+        <!-- <view>{{title}}</view> -->
+        <view class="stopwatch-header-fastesttime">
+          <image class="stopwatch-header-fastesttime-bg" src="../../images/stopwatch_fastest_time.png"></image>
+          <view class="stopwatch-header-fastesttime-num">{{fastestTime}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="watch" bindtap="watchClickEntrance">
+      <image class="watch-bg" src="../../images/stopwatch_watch.png"></image>
+      <view class="watch-num {{watchFail?'watch-num-fail':''}}">{{watchNum}}{{watchNumMs}}</view>
+    </view>
+  </view>
+</view>

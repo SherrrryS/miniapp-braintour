@@ -1,0 +1,26 @@
+<!--pages/gameOver/gameOver.wxml-->
+<view class="game-over">
+  <view class="game-over-content">
+    <image class="game-over-star" src="../../images/game_over_star.png"></image>
+    <image class="game-over-crown" src="../../images/game_over_crown.png"></image>
+
+    <view class="game-over-score">
+      <view class="game-over-score-item">
+        <image class="game-over-best" src="../../images/game_over_best.png"></image>
+        <view class="game-over-score-title">本次成绩</view>
+        <view class="game-over-score-score">{{gameOverData.score}}</view>
+      </view>
+      <view class="game-over-score-item">
+        <view class="game-over-score-title">历史成绩</view>
+        <view class="game-over-score-score">{{gameOverData.history}}</view>
+      </view>
+    </view>
+
+    <view class="game-over-action">
+      <view class="game-over-retry">
+        <image class="game-over-retry-path" src="../../images/game_over_retry.png"></image>
+      </view>
+      <view class="button-info game-over-share" bindtap="share">分享</view>
+    </view>
+  </view>
+</view>

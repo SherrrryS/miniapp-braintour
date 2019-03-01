@@ -1,0 +1,113 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+}
+
+/**
+ * home 主页
+ */
+
+/**
+ * header
+ */
+.header {
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 128rpx;
+  background-color: rgb(96, 170, 255);
+  color: #fff;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.header-avatar {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-avatar .avatar-img {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.header-avatar .completeness {
+  width: 100%;
+  font-size: 22rpx;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-avatar .completeness .completeness-num {
+  font-size: 36rpx;
+}
+
+.header-avatar:after {
+  content: '';
+  width: 4rpx;
+  height: 52rpx;
+  background-color: #fff;
+
+  position: absolute;
+  right: 0;
+}
+
+.header-title {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60rpx;
+}
+
+.header-title .title-main {
+  font-size: 44rpx;
+}
+
+.header-title .title-sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 28rpx;
+}
+
+.header-actions {
+  position: absolute;
+  left: 50%;
+  bottom: -30rpx;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 240rpx;
+  height: 72rpx;
+  /* padding: 0 20rpx; */
+  border-radius: 36rpx;
+
+  background-color: rgb(253, 198, 0);
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.header-actions-arrow {
+  content: '';
+  width: 12rpx;
+  height: 12rpx;
+  margin-left: 9rpx;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAOVBMVEUAAAD///////////////////////////////////////////////////////////////////////8KOjVvAAAAEnRSTlMAyBOT8e3QoZhxXjUv5NV5aWgoNqBYAAAARUlEQVQY033PNw4AIAhAUey9cf/D6mBCYOCPL1EAwI0KLINoOodXtgIwbA6v2Ah+yQpAXz5QTgV6Qp9qY8ORqyvHrcnOvzY+B+GqBlksAAAAAElFTkSuQmCC');
+  background-size: contain;
+}

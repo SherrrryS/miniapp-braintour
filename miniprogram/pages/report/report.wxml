@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- home 主页 -->
+  <view class="home">
+    <view class="header">
+      <view class="header-avatar">
+        <image class="avatar-img" src="{{avatarUrl}}"></image>
+
+        <view class="completeness">报告完成度：<view class="completeness-num">75%</view></view>
+      </view>
+
+      <view class="header-title">
+        <view class="title-main">我的脑力指纹</view>
+        <view class="title-sub">开始了解自己之旅</view>
+      </view>
+    </view>
+
+    <button open-type="share">分享</button>
+  </view>
+</view>

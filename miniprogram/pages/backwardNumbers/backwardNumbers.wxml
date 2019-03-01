@@ -1,0 +1,33 @@
+<!--pages/backwardNumbers/backwardNumbers.wxml-->
+<view class="container">
+  <view class="header">
+    测试阶段
+  </view>
+
+  <view class="content">
+    <view class="square-progress">{{tryTimes}}/{{totalTimes}}</view>
+
+    <view>{{title}}</view>
+    <view>xxx</view>
+
+    <view class="numbers" hidden="{{showKeyboard}}">{{orderNumber}}</view>
+
+    <view class="backward" hidden="{{!showKeyboard}}">
+      <view class="backward-input">
+        <view wx:for="{{orderNumberList}}" wx:key="index"
+          data-index="{{index}}"
+          data-number="{{item}}"
+          class="backward-input-item {{clickNumberList[index] !== item ? 'backward-input-item-error' : ''}}"
+        >{{clickNumberList[index]}}</view>
+      </view>
+      <view class="backward-keyboard">
+        <view wx:for="{{keyboardNumbers}}" wx:key="index"
+          data-index="{{index}}"
+          data-number="{{item}}"
+          class="backward-keyboard-item"
+          bindtap="keyboardClick"
+        >{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>

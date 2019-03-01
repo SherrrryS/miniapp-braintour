@@ -1,0 +1,21 @@
+/* pages/addFunction/addFunction.wxss */
+
+@import "../../style/guide.wxss";
+
+.privacy-policy text {
+    display: block;
+    text-align: left;
+    color: #333;
+    font-size: 28rpx;
+    text-indent: 56rpx;
+}
+
+.privacy-policy text.privacy-policy-title {
+    text-align: center;
+    text-indent: 0;
+}
+
+.privacy-policy text.privacy-policy-section {
+    margin: 20rpx 0 10rpx;
+    text-indent: 0;
+}

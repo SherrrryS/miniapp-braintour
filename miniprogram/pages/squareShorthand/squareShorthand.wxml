@@ -1,0 +1,22 @@
+<!--pages/squareShorthand/squareShorthand.wxml-->
+<view class="container">
+  <view class="header">
+    测试阶段
+  </view>
+
+  <view class="content">
+    <view class="square-progress">{{tryTimes}}/{{totalTimes}}</view>
+
+    <view>{{title}}</view>
+    <view>找到所有方块</view>
+
+    <view class="square" style="width:{{boxWidth}}rpx;">
+      <view wx:for="{{itemList}}" wx:key="index"
+        data-index="{{index}}"
+        data-target="{{item.isTarget}}"
+        class="square-item {{item.isTarget && !hideTarget ? 'square-item-highlight' : ''}} {{item.isTarget && item.isClick ? 'square-item-highlight' : ''}} {{!item.isTarget && item.isClick ? 'square-item-error' : ''}}"
+        bindtap="itemClick"
+      ></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,118 @@
+/* pages/addFunction/addFunction.wxss */
+
+@import "../../style/guide.wxss";
+@import "../../app.wxss";
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(96, 170, 255), rgb(52, 146, 255));
+    overflow: hidden;
+}
+
+.game-over-content {
+    position: relative;
+    width: 558rpx;
+    height: 400rpx;
+    margin: 260rpx auto 0;
+    background-color: #fff;
+    border: 2rpx solid rgb(96, 170, 255);
+    border-radius: 24rpx;
+}
+
+.game-over-star {
+    display: block;
+    position: absolute;
+    top: -148rpx;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 558rpx;
+    height: 148rpx;
+}
+
+.game-over-crown {
+    display: block;
+    position: absolute;
+    top: -110rpx;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 174rpx;
+    height: 166rpx;
+}
+
+.game-over-score {
+    display: flex;
+    flex-direction: row;
+
+    margin: 148rpx auto 0;
+    text-align: center;
+}
+
+.game-over-score-item {
+    position: relative;
+    width: 50%;
+}
+
+.game-over-score-title {
+    height: 42rpx;
+    line-height: 42rpx;
+    color: rgb(78, 158, 249);
+    font-size: 30rpx;
+}
+
+.game-over-score-score {
+    height: 112rpx;
+    line-height: 112rpx;
+    color: rgb(253, 198, 0);
+    font-size: 80rpx;
+    font-weight: bold;
+}
+
+.game-over-best {
+    display: block;
+    position: absolute;
+    top: -65rpx;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 72rpx;
+    height: 50rpx;
+}
+
+.game-over-action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 318rpx auto 0;
+    width: 570rpx;
+    height: 96rpx;
+}
+
+.game-over-retry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 96rpx;
+    height: 96rpx;
+    margin-right: 14rpx;
+    background-color: #fff;
+    border: 2rpx solid rgb(96, 170, 255);
+    border-radius: 50%;
+}
+
+.game-over-retry-path {
+    display: block;
+    width: 49rpx;
+    height: 49rpx;
+}
+
+.game-over-share {
+    /* width: 460rpx; */
+    flex: 1;
+    box-shadow: 0 2rpx 9rpx 0 rgb(35, 138, 255);
+    font-size: 32rpx;
+}

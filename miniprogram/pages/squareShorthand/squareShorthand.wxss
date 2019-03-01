@@ -1,0 +1,29 @@
+/* pages/addFunction/addFunction.wxss */
+
+@import "../../style/guide.wxss";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200rpx;
+}
+
+.square {
+    border: 10rpx solid red;
+    overflow: hidden;
+}
+
+.square-item {
+    float: left;
+    width: 100rpx;
+    height: 100rpx;
+    background-color: blueviolet;
+}
+
+.square-item-highlight {
+    background-color: green;
+}
+.square-item-error {
+    background-color: red;
+}

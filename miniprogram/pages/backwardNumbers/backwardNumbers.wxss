@@ -1,0 +1,45 @@
+/* pages/addFunction/addFunction.wxss */
+
+@import "../../style/guide.wxss";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200rpx;
+}
+
+.backward-input {
+    display: flex;
+    justify-content: space-around;
+}
+
+.backward-input-item {
+    width: 50rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border: 2rpx solid #888;
+    border-radius: 10rpx;
+    text-align: center;
+}
+.backward-input-item-error {
+    color: red;
+}
+
+.backward-keyboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500rpx;
+}
+
+.backward-keyboard-item {
+    width: 100rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    background-color: #ccc;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+<!--pages/gameStart/gameStart.wxml-->
+<view class="game-start">
+  <image class="game-start-header" src="{{gameStartData.headerImgUrl}}"></image>
+
+  <view class="game-start-content">
+    <view class="game-start-title">
+      <view class="game-start-text">{{gameStartData.title}}</view>
+      <view class="game-start-time">需用时 {{gameStartData.time}}分钟</view>
+    </view>
+    <view class="game-start-desc">{{gameStartData.desc}}</view>
+
+    <view class="game-start-score game-start-score-title">
+      <view>最佳成绩</view>
+      <view>剩余次数</view>
+    </view>
+    <view class="game-start-score game-start-score-score">
+      <view>{{gameStartData.bestScore}}</view>
+      <view>{{gameStartData.remainCount}}</view>
+    </view>
+
+    <view class="button-info game-start-button" bindtap="start">开始测试</view>
+  </view>
+</view>

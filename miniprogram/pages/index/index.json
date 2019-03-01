@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "privacy-policy": "../../components/privacyPolicy/privacyPolicy"
+  }
+}

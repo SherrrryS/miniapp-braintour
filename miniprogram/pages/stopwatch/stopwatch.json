@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "超级秒表",
+  "usingComponents": {
+    "game-start": "../../components/gameStart/gameStart",
+    "game-over": "../../components/gameOver/gameOver"
+  }
+}

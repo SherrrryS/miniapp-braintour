@@ -1,0 +1,155 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- intro loading -->
+  <view class="loading" wx:if="{{pageStep === 0}}">
+    <view class="lds-ring"><view></view><view></view><view></view><view></view></view>
+  </view>
+
+
+  <!-- intro 启动页 -->
+  <view class="intro" wx:if="{{pageStep === 1}}">
+    <view class="intro-content">
+      <image class="intro-title" src="../../images/intro_title.png" mode="aspectFit"></image>
+      <image class="intro-quote" src="../../images/intro_quote.png" mode="aspectFit"></image>
+      <!-- <button bindtap="introClick">点击进入</button> -->
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">点击进入</button>
+    </view>
+    <view class="school">
+      <view class="school-logo"></view>
+      北京师范大学 学习与记忆实验室
+    </view>
+  </view>
+
+  <!-- login 登录页 -->
+  <view class="login" wx:if="{{pageStep === 2}}">
+    <view class="login-content">
+      <image class="login-title" src="../../images/login_title.png" mode="aspectFit"></image>
+      <image class="login-quote" src="../../images/login_quote.png" mode="aspectFit"></image>
+      <view class="login-box">
+        <view class="login-row">
+          <text>性别: </text>
+          <radio-group bindchange="genderChange">
+            <label class="login-gender" wx:for="{{genderList}}" wx:key="item.value">
+              <radio value="{{item.value}}" checked="{{item.value === genderChecked}}" />
+              {{item.name}}
+            </label>
+          </radio-group>
+        </view>
+
+        <view class="login-row">
+          <text>年龄: </text>
+          <picker
+            mode="date"
+            value="{{birthday}}"
+            start="1900-01-01"
+            end="2018-12-31"
+            bindchange="birthdayChange"
+          >
+            <view class="picker">{{birthday}}</view>
+          </picker>
+        </view>
+
+        <view class="login-row">
+          <text>身份: </text>
+          <picker bindchange="identityChange" value="{{indentityIndex}}" range="{{identityList}}">
+            <view class="picker">{{identityList[indentityIndex]}}</view>
+          </picker>
+        </view>
+
+        <view class="login-row">
+          <checkbox-group bindchange="agreePrivacyPolicyChange">
+            <label class="checkbox">
+              <checkbox value="{{agreePrivacyPolicy}}" checked="{{agreePrivacyPolicy}}" />
+            </label>
+          </checkbox-group>
+          <view>
+            <text>我已认真阅读并签署</text><text class="atag" bindtap="showPrivacyPolicyPopup">知情同意书</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="participants">已有{{participants}}人参与</view>
+      <button bindtap="loginClick">开启测评</button>
+    </view>
+
+    <view class="privacy-policy-popup" bindtap="closePrivacyPolicyPopup" wx:if="{{showPrivacyPolicy}}">
+      <privacy-policy></privacy-policy>
+    </view>
+  </view>
+
+  <!-- home 主页 -->
+  <view class="home" wx:if="{{pageStep === 3}}">
+    <view class="header">
+      <view class="header-avatar">
+        <image class="avatar-img" src="{{avatarUrl}}"></image>
+
+        <view class="completeness">报告完成度：<view class="completeness-num">75%</view></view>
+      </view>
+
+      <view class="header-title">
+        <view class="title-main">我的脑力指纹</view>
+        <view class="title-sub">开始了解自己之旅</view>
+      </view>
+
+      <navigator url="../report/report" open-type="navigate">
+        <view class="header-actions">
+          <view class="header-actions-text">查看脑力报告</view>
+          <view class="header-actions-arrow"></view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="content">
+      <view class="content-card" wx:for="{{gameList}}" wx:key="item.value">
+        <navigator url="{{item.url}}" open-type="navigate" class="content-card-navigator">
+          <image class="card-image" src="{{item.image}}"></image>
+          <view class="card-text">
+            <text class="card-text-left">{{item.name}}</text>
+            <text class="{{item.goClassName}}">{{item.goStr}}</text>
+          </view>
+          <view class="{{item.cardFlagClassName}}">{{item.statusStr}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- 用户 openid -->
+  <!-- <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view> -->
+
+
+  <!-- 上传图片 -->
+  <!-- <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view> -->
+
+
+  <!-- 操作数据库 -->
+  <!-- <view class="uploader">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>前端操作数据库</text>
+    </navigator>
+  </view> -->
+
+  <!-- 新建云函数 -->
+  <!-- <view class="uploader">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>快速新建云函数</text>
+    </navigator>
+  </view> -->
+
+</view>
